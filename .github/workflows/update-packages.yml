@@ -29,8 +29,11 @@ jobs:
 
       - name: Set up .npmrc for GitHub Packages
         run: |
-          echo "@STGroves:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+          echo "@stgroves:registry=https://npm.pkg.github.com/" >> ~/.npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.PAT }}" >> ~/.npmrc
+
+      - name: Authenticate with npm
+        run: npm set //npm.pkg.github.com/:_authToken=${{ secrets.PAT }}
 
       - name: Install Dependencies
         run: npm install
