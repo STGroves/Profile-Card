@@ -1,0 +1,16 @@
+{
+  "profileInfo": [
+    [{"name": "Stephanie Groves", "pronouns": "(She/Her)"}, {"location": "County Durham"}],
+    [{"profession": "Programmer"}]
+  ],
+  "profileImage": {
+    "imageURL": "",
+    "badge": "\uD83C\uDFF3\uFE0F\u200D⚧"
+  },
+  "skills": {
+    "amount": 10,
+    "fileURL": "",
+    "propertyKey": "name"
+  },
+  "linkURL": ""
+}

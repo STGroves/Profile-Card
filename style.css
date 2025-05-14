@@ -1,0 +1,141 @@
+:host {
+  --border: 1px solid white;
+  --skill-color: skyblue;
+  --link-color: skyblue;
+
+  --card-width: 460px;
+  --padding: 10px;
+}
+
+#profile-image img {
+  height: auto;
+  width: auto;
+  border-radius: 50%;
+  max-width: 100%;
+  background-image: url("./resources/default-profile.png");
+}
+
+#profile-image {
+  border: var(--border);
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  position: relative;
+  max-width: 100%;
+  margin: 0;
+}
+
+#profile-image figcaption {
+  position: absolute;
+  font-size: 50px;
+  right: 0;
+  bottom: 0;
+  line-height: 50px;
+}
+
+#infoColumn h3 {
+  margin: 0;
+  font-weight: normal;
+}
+
+#profile-card {
+  display: flex;
+  background-color: #2A2A32;
+  padding: var(--padding);
+  border-radius: 25px;
+  gap: 20px;
+  min-width: var(--card-width);
+  max-width: var(--card-width);
+  flex-shrink: 0;
+}
+
+#location {
+  font-size: 14px;
+  font-style: italic;
+  line-height: 15px;
+  height: 16px;
+  vertical-align: text-top;
+}
+
+#pronouns {
+  font-style: italic;
+  display: inline-block;
+  font-size: 20px;
+}
+
+#infoColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#proficiencies {
+  color: var(--skill-color);
+  font-size: 12px;
+  margin: 0;
+  font-weight: normal;
+}
+
+#profession {
+  font-size: 20px;
+}
+
+#skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#skills-area {
+  background-color: #222228;
+  padding: var(--padding);
+  border-radius: 10px;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.skillTag {
+  color: var(--skill-color);
+  border: var(--border);
+  font-size: 12px;
+  padding: 2px 5px;
+  width: max-content;
+}
+
+#miscColumn {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 200px;
+}
+
+#profile-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#profile-links a {
+  color: var(--link-color);
+  font-size: 20px;
+}
+
+#name {
+  margin: 0;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.spanWrapper {
+  display: flex;
+  gap: 5px;
+}
+
+table {
+  border-collapse: collapse;
+}

@@ -1,0 +1,36 @@
+name: Update Package from GitHub Packages
+
+on:
+  push:
+    branches:
+      - main  # Trigger when you push to the main branch
+  workflow_dispatch:  # Trigger manually from the GitHub UI if needed
+
+jobs:
+  update-package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: 'https://npm.pkg.github.com'  # GitHub Packages registry
+
+      - name: Set up npm auth
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.PAT }}" > ~/.npmrc
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Check for updates
+        run: |
+          # Check the current version of the package installed
+          CURRENT_VERSION=$(npm list @stgroves/js-utilities --depth=0)
+          echo "Current version of @stgroves/js-utilities: $CURRENT_VERSION"
+
+      - name: Update Package
+        run: npm update @stgroves/js-utilities  # This updates the package
